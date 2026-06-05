@@ -2,6 +2,9 @@ const div_media = document.getElementById("media");
 
 let materiaSelecionada = "Português"; // valor inicial
 
+let nomeAluno = "";
+let idadeAluno = "";
+
 function mostrar() {
 
     let n1 = Number(document.getElementById("nota1").value);
@@ -21,12 +24,36 @@ function mostrar() {
 
     let media = (n1 + n2 + n3 + n4) / 4;
 
+    if (media >=6){
+
     div_media.innerHTML = `
         <p>
-            Média em <strong>${materiaSelecionada}</strong>:
-            ${media.toFixed(2)}
+        Aluno: ${nomeAluno} (${idadeAluno} anos)<br>    
+        Média em <strong>${materiaSelecionada}</strong>:
+            ${media.toFixed(2)} - Aprovado
         </p>
     `;
+}
+    else if (media >0){
+
+        div_media.innerHTML = `
+        <p>
+        Aluno: ${nomeAluno} (${idadeAluno} anos)<br>  
+            Média em <strong>${materiaSelecionada}</strong>:
+            ${media.toFixed(2)} - Recuperação
+        </p>
+    `;
+    }
+    else {
+
+    div_media.innerHTML = `
+        <p>
+        Aluno: ${nomeAluno} (${idadeAluno} anos)<br>  
+            Média em <strong>${materiaSelecionada}</strong>:
+            ${media.toFixed(2)} - Reprovado
+        </p>
+    `;
+    }
 }
 
 const opcoes = document.querySelectorAll(".opcao");
@@ -42,3 +69,20 @@ opcoes.forEach(opcao => {
         materiaSelecionada = opcao.textContent.trim();
     });
 });
+
+function salvarAluno(){
+
+    const nome = document.getElementById("nomeAluno").value.trim();
+    const idade = Number(document.getElementById("idadeAluno").value);
+
+    if(nome === "" || idade === ""){
+        alert("Preencha nome e idade.");
+        return;
+    }
+
+    nomeAluno = nome;
+    idadeAluno = idade;
+
+    document.getElementById("modal")
+    .classList.add("modal-fechado");
+}
