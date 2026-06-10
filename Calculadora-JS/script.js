@@ -1,4 +1,4 @@
-
+const btn_calc = document.getElementById("btn-calc")
 const div = document.getElementById("resultado")
 
 function mostrar(result){
@@ -39,7 +39,7 @@ mostrar(n1 / n2)
 
 }
 
-function calcular(){
+btn_calc.addEventListener("click",()=>{
 
 if(document.getElementById("numero1").value == "" ||
 document.getElementById("numero2").value == "" || 
@@ -62,4 +62,4 @@ else if(operador =="-"){subtrair(n1,n2)}
 else if(operador == "*"){multiplicar(n1,n2)}
 else if(operador =="/"){dividir(n1,n2)}
 
-}
+})
