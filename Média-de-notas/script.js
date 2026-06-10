@@ -1,11 +1,13 @@
 const div_media = document.getElementById("media");
+const btn_salvar = document.querySelector(".btn-modal")
+const btn_mostrar = document.getElementById("mostrar_media")
 
 let materiaSelecionada = "Português"; // valor inicial
 
 let nomeAluno = "";
 let idadeAluno = "";
 
-function mostrar() {
+btn_mostrar.addEventListener("click",()=>{
 
     let n1 = Number(document.getElementById("nota1").value);
     let n2 = Number(document.getElementById("nota2").value);
@@ -34,7 +36,7 @@ function mostrar() {
         </p>
     `;
 }
-    else if (media >0){
+    else if (media >=1){
 
         div_media.innerHTML = `
         <p>
@@ -44,7 +46,7 @@ function mostrar() {
         </p>
     `;
     }
-    else {
+    else{
 
     div_media.innerHTML = `
         <p>
@@ -53,8 +55,8 @@ function mostrar() {
             ${media.toFixed(2)} - Reprovado
         </p>
     `;
-    }
-}
+    }})
+
 
 const opcoes = document.querySelectorAll(".opcao");
 
@@ -70,12 +72,12 @@ opcoes.forEach(opcao => {
     });
 });
 
-function salvarAluno(){
+btn_salvar.addEventListener("click",()=>{
 
     const nome = document.getElementById("nomeAluno").value.trim();
     const idade = Number(document.getElementById("idadeAluno").value);
 
-    if(nome === "" || idade === ""){
+    if(nome === "" || isNaN(idade)){
         alert("Preencha nome e idade.");
         return;
     }
@@ -85,4 +87,4 @@ function salvarAluno(){
 
     document.getElementById("modal")
     .classList.add("modal-fechado");
-}
+})
