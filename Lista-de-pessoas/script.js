@@ -1,4 +1,8 @@
-function organizar(){
+const btn_organizar = document.getElementById("btn_organizar")
+const btn_limpar = document.getElementById("limpar")
+const btn_analise = document.getElementById("analise")
+
+btn_organizar.addEventListener("click",()=>{
 
 let pessoas = document.getElementById("nomes").value
  if (!pessoas) return;
@@ -22,7 +26,7 @@ const li = document.createElement("li")
 li.textContent = `${pessoa.nome} - ${pessoa.idade} anos`
 ul.appendChild(li)
 
-})}
+})})
 
 
 /*==========================================================*/
@@ -30,7 +34,7 @@ ul.appendChild(li)
 /*==========================================================*/
 
 
-function organizar2(){
+btn_organizar.addEventListener("click",()=>{
 
 let pessoas = document.getElementById("nomes").value
  if (!pessoas) return;
@@ -56,12 +60,12 @@ const li = document.createElement("li")
 li.textContent = `${pessoa.nome} - ${pessoa.idade} anos`
 ul.appendChild(li)
 
-})}
+})})
 /*==========================================================*/
 /*==========================================================*/
 /*==========================================================*/
 
-function organizarAlfa(){
+btn_organizar.addEventListener("click",()=>{
 
 let pessoas = document.getElementById("nomes").value
  if (!pessoas) return;
@@ -87,14 +91,14 @@ nomesAlfa.forEach( pessoa=>{
 const li = document.createElement("li")
 li.textContent = `${pessoa.nome} - ${pessoa.idade} anos`
 ul.appendChild(li)
-})}
+})})
 
 /*==========================================================*/
 /*==========================================================*/
 /*==========================================================*/
 
 
-function limpar(){
+btn_limpar.addEventListener("click",()=>{
 
 const ul = document.getElementById("listaFinal")
 ul.innerHTML = ""
@@ -102,13 +106,13 @@ const ul2 = document.getElementById("listaFinal2")
 ul2.innerHTML = ""
 const ul3 = document.getElementById("listaFinal3");
     ul3.innerHTML = "";
-}
+})
 
 /*==========================================================*/
 /*==========================================================*/
 /*==========================================================*/
 
-function analise() {
+btn_analise.addEventListener("click",()=>{
 
     let pessoas = document.getElementById("nomes").value
  if (!pessoas) return;
@@ -148,8 +152,10 @@ alert(
         "\nQuantidade de pessoas: " + quantidade +
         "\nMais velho: " + maisVelho.nome + " (" + maisVelho.idade + " anos)" +
         "\nMais novo: " + maisNovo.nome + " (" + maisNovo.idade + " anos)"
-    )}
+    )})
 
 /*==========================================================*/
 /*==========================================================*/
 /*==========================================================*/
+
+
