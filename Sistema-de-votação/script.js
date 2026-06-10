@@ -1,4 +1,8 @@
-function organizar(){
+const btn_organizar = document.getElementById("organizar")
+const btn_limpar = document.getElementById("limpar")
+
+
+btn_organizar.addEventListener("click",()=>{
 
 let pessoas = document.getElementById("pessoas").value;
 
@@ -6,22 +10,14 @@ if (!pessoas) return;
 
 let pessoa = pessoas.split(",").map(item => {
 
-    const [nome, idade] = item.split("-").map(valor => valor.trim());
+    const [nome, idade] = item.split("-");
 
-    if (!nome || !idade){
+    if(Number(idade) <= 0){
 
-         alert("Use o formato Nome-Idade");
-    throw new Error("Formato inválido");
+        alert("Insira uma idade válida");
+        throw new Error("Idade inválida");
 
     }
-
-if (isNaN(Number(idade)) || Number(idade) <= 0){
-
-    alert("Insira uma idade válida");
-    throw new Error("Idade inválida");
-
-}
-
 
     return{
 
@@ -121,7 +117,7 @@ lista.forEach((pessoa) =>{
 
 document.getElementById("pessoas").value = "";
 
-})}
+})})
 
 function limpar(){
 
