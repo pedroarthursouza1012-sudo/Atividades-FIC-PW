@@ -113,13 +113,11 @@ lista.forEach((pessoa) =>{
 
     ul.appendChild(li);
 
-
-
 document.getElementById("pessoas").value = "";
 
 })})
 
-function limpar(){
+btn_limpar.addEventListener("click",()=>{
 
 const ul = document.getElementById("listaFinal");
 ul.classList.remove("show")
@@ -127,4 +125,4 @@ ul.classList.add("hidden")
 
 ul.textContent = ""
 
-}
+})
