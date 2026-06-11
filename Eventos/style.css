@@ -12,6 +12,12 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
 
+.dark{
+
+background-color: rgb(39, 39, 50);
+
+}
+
 h1{
 
 margin: 2rem;
