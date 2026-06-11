@@ -26,11 +26,8 @@ p.classList.toggle("show");
 
 btn_cor.addEventListener("click",()=>{
 
-if (body.style.backgroundColor ==="rgb(141, 255, 206)") {
-    body.style.backgroundColor = "white";
-} else {
-    body.style.backgroundColor = "rgb(141, 255, 206)";
-}    
+body.classList.toggle("dark")
+
 })
 
 tom.addEventListener("click",()=>{
